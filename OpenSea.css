@@ -1,0 +1,401 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(0deg, #202225, #000);
+  height: 800px;
+}
+.class-bg-body {
+  background: linear-gradient(0deg, #fff, #000);
+}
+.app {
+  width: 1500px;
+  height: 100vh;
+}
+
+/* =====base====== */
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+li {
+  list-style: none;
+}
+
+/* =====header===== */
+
+.head-top {
+  margin-top: 10px;
+  width: 100%;
+  height: 72px;
+  display: flex;
+  align-items: center;
+}
+
+.Logo {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 900;
+  width: 30%;
+  cursor: pointer;
+}
+
+.Logo img {
+  height: 50px;
+}
+
+.search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 5px 7px;
+  background: #2d2e2f;
+  backdrop-filter: blur(100px);
+  box-shadow: 20px 20px 60px #000, -20px -20px 60px #000;
+  border-radius: 12px;
+  cursor: text;
+}
+
+.search:hover {
+  background: #222222;
+}
+
+.search i {
+  font-size: 1.6rem;
+  color: #a1a2a2;
+  padding: 0 10px;
+}
+
+.search input {
+  padding: 7px 10px;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  flex: 1;
+}
+
+.search input::placeholder {
+  color: #fff;
+}
+
+.top-nav-right {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  cursor: pointer;
+}
+
+.Drops,
+.Stats,
+.Resources,
+.User,
+.Language {
+  position: relative;
+}
+
+.Drops_list,
+.Stats_list,
+.Resources_list,
+.User_list,
+.Language_list {
+  position: absolute;
+  left: 0;
+  top: 50px;
+  background-color: #000;
+  height: 100px;
+  width: 200px;
+  border-radius: 22px;
+  border: 1px solid white;
+  line-height: 50px;
+  display: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.Drops::before,
+.Stats::before,
+.Resources::before,
+.User::before,
+.Language::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  height: 30px;
+}
+
+.Resources_list {
+  height: 450px;
+}
+
+.User_list,
+.Language_list {
+  right: 0;
+  left: unset;
+  font-size: 1rem;
+  height: 400px;
+  width: 220px;
+}
+
+.Drops_element,
+.Stats_element,
+.Resources_element,
+.User_element,
+.Language_element {
+  padding-left: 10px;
+}
+
+.Resources_element:last-child {
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Resources_element:last-child:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.Resources_element i:hover {
+  color: #b3b3b3;
+}
+
+.Drops_element:hover,
+.Stats_element:hover,
+.Resources_element:hover,
+.User_element:hover,
+.Language_element:hover {
+  color: black;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.User_element i {
+  margin-right: 10px;
+}
+
+.Drops:hover .Drops_list,
+.Stats:hover .Stats_list,
+.Resources:hover .Resources_list,
+.User:hover .User_list,
+.Language:hover .Language_list {
+  display: block;
+  animation: Transform_Hover linear 0.2s;
+}
+
+.Language_list {
+  height: 400px;
+}
+
+.Language_element {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.Language_element i {
+  font-size: 1.2rem;
+}
+
+@keyframes Transform_Hover {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+}
+
+.night_mode {
+  display: flex;
+  align-items: center;
+}
+
+.toggle_night {
+  width: 60px;
+  height: 30px;
+  background-color: #2081e2;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin-left: 20px;
+  border-radius: 50px;
+}
+
+.night_box {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: 0.5s;
+  transform: translateX(30px);
+}
+.iconsun {
+  display: none;
+}
+
+.toggleclick {
+  transform: translateX(0px);
+}
+
+.top-nav-right .infor {
+  font-size: 1.6rem;
+}
+
+.top-nav-right .content,
+.top-nav-right .infor {
+  display: flex;
+}
+.top-nav-right .content li,
+.top-nav-right .infor li {
+  margin: 0 20px;
+}
+
+.top-nav-right .content li:hover,
+.top-nav-right .infor li:hover {
+  color: #ccc;
+}
+
+.head-bot {
+  width: 100%;
+  height: 70px;
+}
+
+.bot-nav {
+  display: flex;
+}
+
+.bot-nav li {
+  padding: 4px 16px;
+  margin: 20px 10px;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.bot-nav li:hover {
+  background: #b3b3b3;
+}
+
+.active {
+  background: #b3b3b3;
+}
+
+.banner {
+  width: 100%;
+  height: 560px;
+}
+
+.SlideShow {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.SlideShow:hover i {
+  display: inline-block;
+}
+
+.SlideMain {
+  height: 100%;
+  overflow: hidden;
+  border-radius: 3rem;
+}
+
+.SlideView {
+  display: flex;
+  transition: 0.7s;
+}
+
+.SlideView img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: 0.4s;
+}
+
+.SlideView img:hover {
+  transform: scale(1.1);
+}
+
+.SlideShow i {
+  font-size: 2rem;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  display: none;
+  cursor: pointer;
+}
+
+.SlidePrev {
+  top: 50%;
+  transform: translateY(-50%);
+  left: -10px;
+}
+
+.SlideNext {
+  top: 50%;
+  transform: translateY(-50%);
+  right: -10px;
+}
+
+.banner-content {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+}
+
+.banner-conten-left {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.banner-conten-left img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+
+.banner-conten-right {
+  display: flex;
+  align-items: end;
+}
+
+.banner-conten-right button {
+  padding: 1rem 1.3rem;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  background: transparent;
+  backdrop-filter: blur(15px);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+}

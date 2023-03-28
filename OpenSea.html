@@ -10,195 +10,252 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     />
+    <link rel="stylesheet" href="./responsive.css" />
+    <link rel="stylesheet" href="./grid.css" />
   </head>
   <body>
-    <header>
-      <div class="app">
-        <header>
-          <div class="head-top">
-            <div class="Logo">
-              <img
-                src="https://opensea.io/static/images/logos/opensea.svg"
-                alt=""
-              />
-              <span>OpenSea</span>
-            </div>
-            <div class="search">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <input type="search" placeholder="search game" id="valueInput" />
-            </div>
-            <div class="top-nav-right">
-              <ul class="content">
-                <li class="Drops">
-                  Drops
-                  <div class="Drops_list Dark">
-                    <div class="Drops_element">Calendar</div>
-                    <div class="Drops_element">Learn more</div>
-                  </div>
-                </li>
-                <li class="Stats">
-                  Stats
-                  <div class="Stats_list Dark">
-                    <div class="Stats_element">Ranking</div>
-                    <div class="Stats_element">Activity</div>
-                  </div>
-                </li>
-                <li class="Resources">
-                  Resources
-                  <div class="Resources_list Dark">
-                    <div class="Resources_element">Blog</div>
-                    <div class="Resources_element">Learn</div>
-                    <div class="Resources_element">Help Center</div>
-                    <div class="Resources_element">Use content FAQs</div>
-                    <div class="Resources_element">Taxes</div>
-                    <div class="Resources_element">Partners</div>
-                    <div class="Resources_element">Developper platfrom</div>
-                    <div class="Resources_element">Platfrom Status</div>
-                    <hr />
-                    <div class="Resources_element">
-                      <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                      <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                      <i class="fa-brands fa-facebook"></i>
-                      <i class="fa-brands fa-tiktok"></i
-                      ><i class="fa-brands fa-youtube"></i
-                      ><i class="fa-brands fa-github"></i>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <ul class="infor">
-                <li class="User Language">
-                  <i class="fa-regular fa-circle-user"></i>
-                  <div class="Language_list">
-                    <div class="Language_element backLanguage">
-                      <i class="fa-solid fa-arrow-left"></i>Choose Language
-                    </div>
-                    <div class="Language_element">
-                      English
-                      <div class="language-icon">
-                        <i class="fa-solid fa-check"></i>
-                      </div>
-                    </div>
-                    <div class="Language_element">
-                      VietNamese
-                      <div class="language-icon"></div>
-                    </div>
-                    <div class="Language_element">
-                      Francais
-                      <div class="language-icon"></div>
-                    </div>
-                    <div class="Language_element">
-                      VietNamese
-                      <div class="language-icon"></div>
-                    </div>
-                    <div class="Language_element">
-                      Francais
-                      <div class="language-icon"></div>
-                    </div>
-                    <div class="Language_element">
-                      VietNamese
-                      <div class="language-icon"></div>
-                    </div>
-                    <div class="Language_element">
-                      Francais
-                      <div class="language-icon"></div>
-                    </div>
-                  </div>
-                  <div class="User_list Dark">
-                    <div class="User_element">
-                      <i class="fa-solid fa-user"></i>Profile
-                    </div>
-                    <div class="User_element">
-                      <i class="fa-regular fa-heart"></i>Valorites
-                    </div>
-                    <div class="User_element">
-                      <i class="fa-solid fa-eye"></i>Watchlist
-                    </div>
-                    <div class="User_element">
-                      <i class="fa-solid fa-table"></i>My Collections
-                    </div>
-                    <div class="User_element">
-                      <i class="fa-solid fa-pen"></i>Create
-                    </div>
-                    <div class="User_element">
-                      <i class="fa-solid fa-gear"></i>Settings
-                    </div>
-                    <div
-                      class="User_element tranlateLanguage"
-                      style="
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                      "
-                    >
-                      <div><i class="fa-solid fa-globe"></i>Language</div>
-                      <p>
-                        <sub>en<i class="fa-solid fa-chevron-right"></i></sub>
-                      </p>
-                    </div>
-                    <div class="User_element night_mode">
-                      <span class="iconsun"
-                        ><i class="fa-solid fa-sun"></i
-                      ></span>
-                      <span class="iconmoon"
-                        ><i class="fa-solid fa-moon"></i
-                      ></span>
-                      Night mode
-                      <div class="toggle_night">
-                        <div class="night_box"></div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li><i class="fa-sharp fa-regular fa-cart-shopping"></i></li>
-                <li><i class="fa-solid fa-wallet" title="wallet"></i></li>
-              </ul>
-            </div>
+    <div class="app">
+      <header>
+        <div class="head-top">
+          <div class="Logo">
+            <img
+              src="https://opensea.io/static/images/logos/opensea.svg"
+              alt=""
+            />
+            <span>OpenSea</span>
           </div>
-          <div class="head-bot">
-            <ul class="bot-nav">
-              <li>All</li>
-              <li>Art</li>
-              <li class="active">Gaming</li>
-              <li>Memberships</li>
-              <li>PFPs</li>
-              <li>Photography</li>
+          <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" placeholder="search game" id="valueInput" />
+          </div>
+          <div class="top-nav-right">
+            <ul class="content">
+              <li class="Drops">
+                Drops
+                <div class="Drops_list Dark">
+                  <div class="Drops_element">Calendar</div>
+                  <div class="Drops_element">Learn more</div>
+                </div>
+              </li>
+              <li class="Stats">
+                Stats
+                <div class="Stats_list Dark">
+                  <div class="Stats_element">Ranking</div>
+                  <div class="Stats_element">Activity</div>
+                </div>
+              </li>
+              <li class="Resources">
+                Resources
+                <div class="Resources_list Dark">
+                  <div class="Resources_element">Blog</div>
+                  <div class="Resources_element">Learn</div>
+                  <div class="Resources_element">Help Center</div>
+                  <div class="Resources_element">Use content FAQs</div>
+                  <div class="Resources_element">Taxes</div>
+                  <div class="Resources_element">Partners</div>
+                  <div class="Resources_element">Developper platfrom</div>
+                  <div class="Resources_element">Platfrom Status</div>
+                  <hr />
+                  <div class="Resources_element">
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-tiktok"></i
+                    ><i class="fa-brands fa-youtube"></i
+                    ><i class="fa-brands fa-github"></i>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <ul class="infor">
+              <li class="User Language">
+                <i class="fa-regular fa-circle-user"></i>
+                <div class="Language_list">
+                  <div class="Language_element backLanguage">
+                    <i class="fa-solid fa-arrow-left"></i>Choose Language
+                  </div>
+                  <div class="Language_element">
+                    English
+                    <div class="language-icon">
+                      <i class="fa-solid fa-check"></i>
+                    </div>
+                  </div>
+                  <div class="Language_element">
+                    VietNamese
+                    <div class="language-icon"></div>
+                  </div>
+                  <div class="Language_element">
+                    Francais
+                    <div class="language-icon"></div>
+                  </div>
+                  <div class="Language_element">
+                    VietNamese
+                    <div class="language-icon"></div>
+                  </div>
+                  <div class="Language_element">
+                    Francais
+                    <div class="language-icon"></div>
+                  </div>
+                  <div class="Language_element">
+                    VietNamese
+                    <div class="language-icon"></div>
+                  </div>
+                  <div class="Language_element">
+                    Francais
+                    <div class="language-icon"></div>
+                  </div>
+                </div>
+                <div class="User_list Dark">
+                  <div class="User_element">
+                    <i class="fa-solid fa-user"></i>Profile
+                  </div>
+                  <div class="User_element">
+                    <i class="fa-regular fa-heart"></i>Valorites
+                  </div>
+                  <div class="User_element">
+                    <i class="fa-solid fa-eye"></i>Watchlist
+                  </div>
+                  <div class="User_element">
+                    <i class="fa-solid fa-table"></i>My Collections
+                  </div>
+                  <div class="User_element">
+                    <i class="fa-solid fa-pen"></i>Create
+                  </div>
+                  <div class="User_element">
+                    <i class="fa-solid fa-gear"></i>Settings
+                  </div>
+                  <div
+                    class="User_element tranlateLanguage"
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                    "
+                  >
+                    <div><i class="fa-solid fa-globe"></i>Language</div>
+                    <p>
+                      <sub>en<i class="fa-solid fa-chevron-right"></i></sub>
+                    </p>
+                  </div>
+                  <div class="User_element night_mode">
+                    <span class="iconsun"><i class="fa-solid fa-sun"></i></span>
+                    <span class="iconmoon"
+                      ><i class="fa-solid fa-moon"></i
+                    ></span>
+                    Night mode
+                    <div class="toggle_night">
+                      <div class="night_box"></div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li><i class="fa-sharp fa-regular fa-cart-shopping"></i></li>
+              <li><i class="fa-solid fa-wallet" title="wallet"></i></li>
             </ul>
           </div>
-          <div class="banner">
-            <div class="SlideShow">
-              <div class="SlideMain">
-                <div class="SlideView">
-                  <img
-                    src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/intermediary/f/e5d317eb-ef35-41c6-a5ae-c488171854f8/dc3vdyo-5e9e614d-ef97-4ba9-b5e6-6c0bd01425ab.jpg/v1/fill/w_1600,h_1132,q_70,strp/dragon_ball_fighterz_all_characters_so_far_by_supersaiyancrash_dc3vdyo-fullview.jpg"
-                    alt=""
-                  />
-                  <img
-                    src="https://static3.srcdn.com/wordpress/wp-content/uploads/2020/06/One-Piece.jpg"
-                    alt=""
-                  />
-                </div>
+        </div>
+        <div class="head-bot">
+          <ul class="bot-nav">
+            <li>All</li>
+            <li>Art</li>
+            <li class="active">Gaming</li>
+            <li>Memberships</li>
+            <li>PFPs</li>
+            <li>Photography</li>
+          </ul>
+        </div>
+        <div class="banner">
+          <div class="SlideShow">
+            <div class="SlideMain">
+              <div class="SlideView">
+                <img
+                  src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/intermediary/f/e5d317eb-ef35-41c6-a5ae-c488171854f8/dc3vdyo-5e9e614d-ef97-4ba9-b5e6-6c0bd01425ab.jpg/v1/fill/w_1600,h_1132,q_70,strp/dragon_ball_fighterz_all_characters_so_far_by_supersaiyancrash_dc3vdyo-fullview.jpg"
+                  alt=""
+                />
+                <img
+                  src="https://static3.srcdn.com/wordpress/wp-content/uploads/2020/06/One-Piece.jpg"
+                  alt=""
+                />
               </div>
-              <i class="fa-solid fa-chevron-left SlidePrev"></i>
-              <i class="fa-solid fa-chevron-right SlideNext"></i>
-              <div class="banner-content">
-                <div class="banner-conten-left">
-                  <img
-                    src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/intermediary/f/e5d317eb-ef35-41c6-a5ae-c488171854f8/dc3vdyo-5e9e614d-ef97-4ba9-b5e6-6c0bd01425ab.jpg/v1/fill/w_1600,h_1132,q_70,strp/dragon_ball_fighterz_all_characters_so_far_by_supersaiyancrash_dc3vdyo-fullview.jpg"
-                    alt=""
-                  />
-                  <h2>Dragon Ball</h2>
-                  <p>10.000 items. 99 ETH</p>
-                </div>
-                <div class="banner-conten-right">
-                  <button>View collection</button>
-                </div>
+            </div>
+            <i class="fa-solid fa-chevron-left SlidePrev"></i>
+            <i class="fa-solid fa-chevron-right SlideNext"></i>
+            <div class="banner-content">
+              <div class="banner-conten-left">
+                <img
+                  src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/intermediary/f/e5d317eb-ef35-41c6-a5ae-c488171854f8/dc3vdyo-5e9e614d-ef97-4ba9-b5e6-6c0bd01425ab.jpg/v1/fill/w_1600,h_1132,q_70,strp/dragon_ball_fighterz_all_characters_so_far_by_supersaiyancrash_dc3vdyo-fullview.jpg"
+                  alt=""
+                />
+                <h2>Dragon Ball</h2>
+                <p>10.000 items. 99 ETH</p>
+              </div>
+              <div class="banner-conten-right">
+                <button>View collection</button>
               </div>
             </div>
           </div>
-        </header>
+        </div>
+      </header>
+      <div class="bgmain">
+        <main>
+          <section class="main-title">
+            <div class="select-left">
+              <h2 class="select-leftactive">Trending</h2>
+              <h2>Top</h2>
+            </div>
+            <div class="select-right">
+              <div class="select-time">
+                <div class="time-button time-buttonactive">1h</div>
+                <div class="time-button">6h</div>
+                <div class="time-button">24h</div>
+                <div class="time-button">7d</div>
+              </div>
+              <div class="select-chains">
+                <span>All Chains</span>
+                <i class="fa-sharp fa-solid fa-chevron-down"></i>
+              </div>
+              <div class="select-view">View all</div>
+            </div>
+          </section>
+          <!-- <hr width="100%" /> -->
+
+          <section>
+            <div class="grid wide">
+              <div class="row sm-gutter">
+                <div class="col p-6">
+                  <div class="product-trending">1</div>
+                </div>
+                <div class="col p-6">
+                  <div class="product-trending">2</div>
+                </div>
+                <div class="col p-6">
+                  <div class="product-trending">3</div>
+                </div>
+                <div class="col p-6">
+                  <div class="product-trending">4</div>
+                </div>
+                <div class="col p-6">
+                  <div class="product-trending">5</div>
+                </div>
+                <div class="col p-6">
+                  <div class="product-trending">6</div>
+                </div>
+                <div class="col p-6">
+                  <div class="product-trending">7</div>
+                </div>
+                <div class="col p-6">
+                  <div class="product-trending">8</div>
+                </div>
+                <div class="col p-6">
+                  <div class="product-trending"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
       </div>
-    </header>
+    </div>
+
     <script src="./Oepnsea.js"></script>
   </body>
 </html>

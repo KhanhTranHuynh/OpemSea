@@ -1,0 +1,33 @@
+/* tablet + moblie */
+@media (max-width: 1023px) {
+  :root {
+    --height_head_top: 0px;
+  }
+  .hide-on-mobile-tablet {
+    display: none;
+  }
+  .show-on-mobile-tablet {
+    display: block;
+  }
+}
+/* tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+  .hide-on-tablet {
+    display: none;
+  }
+  .show-on-tablet {
+    display: block;
+  }
+}
+/* mobile */
+@media (max-width: 739px) {
+  .hide-on-mobile {
+    display: none;
+  }
+  .show-on-mobile {
+    display: block;
+  }
+  .list__product {
+    margin: 0 5px;
+  }
+}

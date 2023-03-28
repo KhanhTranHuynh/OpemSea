@@ -9,14 +9,14 @@ body {
   display: flex;
   justify-content: center;
   background: linear-gradient(0deg, #202225, #000);
-  height: 800px;
+  /* height: 100vh; */
 }
 .class-bg-body {
   background: linear-gradient(0deg, #fff, #000);
 }
 .app {
   width: 1500px;
-  height: 100vh;
+  padding: 20px;
 }
 
 /* =====base====== */
@@ -333,6 +333,7 @@ li {
   object-fit: cover;
   object-position: center;
   transition: 0.4s;
+  transition-delay: 0.1s;
 }
 
 .SlideView img:hover {
@@ -398,4 +399,98 @@ li {
   color: #fff;
   font-size: 1.2rem;
   font-weight: 700;
+}
+
+/* =====main====== */
+
+main {
+  margin-top: 20px;
+}
+.main-title {
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.select-left {
+  display: flex;
+  width: 190px;
+  justify-content: space-between;
+  color: #828a91;
+}
+
+.select-leftactive {
+  color: white;
+  position: relative;
+}
+
+.select-leftactive::before {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -10px;
+}
+
+.select-right {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.select-time {
+  width: 160px;
+  height: 40px;
+  line-height: 40px;
+  background-color: gray;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.time-button {
+  width: 25%;
+  text-align: center;
+  background-color: #202225;
+  color: #7f878e;
+}
+
+.time-buttonactive {
+  background-color: #353840;
+  color: white;
+  cursor: default;
+}
+
+.time-button:hover {
+  background-color: gray;
+  color: white;
+}
+
+.select-chains,
+.select-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  border: 1px solid black;
+  background-color: #202225;
+  padding: 0 10px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.select-chains i {
+  margin-left: 12px;
+  font-size: 12px;
+}
+
+.select-chains:hover,
+.select-view:hover {
+  border: #fff 1px solid;
+}
+
+.select-chains:hover i {
+  color: rgba(255, 255, 255, 0.2);
 }

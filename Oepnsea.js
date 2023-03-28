@@ -3,15 +3,12 @@ const body = document.querySelector("body");
 const headBot_nav = document.querySelectorAll(".head-bot .bot-nav li");
 headBot_nav.forEach((item) => {
   item.addEventListener("click", function () {
-    clear_nav();
+    headBot_nav.forEach((item) => {
+      item.classList.remove("active");
+    });
     item.classList.add("active");
   });
 });
-function clear_nav() {
-  headBot_nav.forEach((item) => {
-    item.classList.remove("active");
-  });
-}
 
 //Banner slide show
 const SlideView = document.querySelector(".SlideView");
@@ -102,3 +99,23 @@ for (let i = 0; i < Language_element.length; i++) {
     languageicon[i - 1].innerHTML = `<i class="fa-solid fa-check"></i>`;
   });
 }
+
+const selectleft = document.querySelectorAll(".select-left h2");
+selectleft.forEach((item) => {
+  item.addEventListener("click", function () {
+    selectleft.forEach((test) => {
+      test.classList.remove("select-leftactive");
+    });
+    item.classList.add("select-leftactive");
+  });
+});
+
+const selecttime = document.querySelectorAll(".select-time div");
+selecttime.forEach((item) => {
+  item.addEventListener("click", function () {
+    selecttime.forEach((test) => {
+      test.classList.remove("time-buttonactive");
+    });
+    item.classList.add("time-buttonactive");
+  });
+});

@@ -17,7 +17,8 @@ body {
 .app {
   width: 1500px;
   padding: 20px;
-  overflow: hidden;
+  position: relative;
+  /* overflow: hidden; */
 }
 
 /* =====base====== */
@@ -547,7 +548,6 @@ main {
 
 .product-slide {
   overflow: hidden;
-  transition: 1s;
   padding-top: 20px;
 }
 
@@ -574,8 +574,16 @@ main {
   transition: 0.4s;
 }
 
+.product-show-item .img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
 .product-show-item img {
   width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .product-show-item img:hover {

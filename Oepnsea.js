@@ -1,15 +1,38 @@
 const body = document.querySelector("body");
+
+function clickactive(arraylist, item, classactive) {
+  console.log(item);
+  arraylist.forEach((test) => {
+    test.classList.remove(classactive);
+  });
+  item.classList.add(classactive);
+}
+
 //Header Nav page
 const headBot_nav = document.querySelectorAll(".head-bot .bot-nav li");
 headBot_nav.forEach((item) => {
   item.addEventListener("click", function () {
-    headBot_nav.forEach((item) => {
-      item.classList.remove("active");
-    });
-    item.classList.add("active");
+    clickactive([...headBot_nav], item, "active");
   });
 });
 
+//SelectTranding
+const selectleft = document.querySelectorAll(".select-left h2");
+selectleft.forEach((item) => {
+  item.addEventListener("click", function () {
+    clickactive([...selectleft], item, "select-leftactive");
+  });
+});
+
+//SelectTime
+const selecttime = document.querySelectorAll(".select-time div");
+selecttime.forEach((item) => {
+  item.addEventListener("click", function () {
+    clickactive([...selecttime], item, "time-buttonactive");
+  });
+});
+
+//==============================================================
 //Banner slide show
 const SlideView = document.querySelector(".SlideView");
 const Next = document.querySelector(".SlideNext");
@@ -48,6 +71,7 @@ Prev.addEventListener("click", function () {
   }
 });
 
+// Night mode
 const toggle_night = document.querySelector(".toggle_night");
 const night_box = document.querySelector(".night_box");
 const iconsun = document.querySelector(".iconsun");
@@ -75,6 +99,7 @@ toggle_night.addEventListener("click", function () {
   }
 });
 
+//selection Laguage
 const tranlateLanguage = document.querySelector(".tranlateLanguage");
 const User_list = document.querySelector(".User_list");
 const backLanguage = document.querySelector(".backLanguage");
@@ -99,23 +124,3 @@ for (let i = 0; i < Language_element.length; i++) {
     languageicon[i - 1].innerHTML = `<i class="fa-solid fa-check"></i>`;
   });
 }
-
-const selectleft = document.querySelectorAll(".select-left h2");
-selectleft.forEach((item) => {
-  item.addEventListener("click", function () {
-    selectleft.forEach((test) => {
-      test.classList.remove("select-leftactive");
-    });
-    item.classList.add("select-leftactive");
-  });
-});
-
-const selecttime = document.querySelectorAll(".select-time div");
-selecttime.forEach((item) => {
-  item.addEventListener("click", function () {
-    selecttime.forEach((test) => {
-      test.classList.remove("time-buttonactive");
-    });
-    item.classList.add("time-buttonactive");
-  });
-});

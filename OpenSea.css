@@ -29,6 +29,10 @@ li {
   list-style: none;
 }
 
+.mb-20 {
+  margin-bottom: 20px;
+}
+
 /* =====header===== */
 
 .head-top {
@@ -411,6 +415,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 50px;
 }
 
 .select-left {
@@ -493,4 +498,30 @@ main {
 
 .select-chains:hover i {
   color: rgba(255, 255, 255, 0.2);
+}
+
+.product-trending {
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-trending-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-trending-name img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 12px;
+  margin: 0 20px;
+}
+
+.product-trending-price {
+  display: flex;
+  justify-content: space-between;
+  width: 270px;
 }

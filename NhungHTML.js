@@ -236,9 +236,8 @@ for (let i = 0; i < arrayHaiChieu.length; i++) {
   const mangcon = arrayHaiChieu[i];
   for (let j = 0; j < mangcon.length; j++) {
     let clasnamene = `.endfoot${i + 1}`;
-    if (j == 0) {
-      document.querySelector(clasnamene).innerHTML += `<h3>${mangcon[0]}</h3>`;
-    }
-    document.querySelector(clasnamene).innerHTML += `<p>${mangcon[j]}</p>`;
+    if (j == 0)
+      document.querySelector(clasnamene).innerHTML += `<h4>${mangcon[0]}</h4>`;
+    else document.querySelector(clasnamene).innerHTML += `<p>${mangcon[j]}</p>`;
   }
 }

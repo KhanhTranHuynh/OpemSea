@@ -43,8 +43,13 @@ const Next = document.querySelector(".SlideNext");
 const Prev = document.querySelector(".SlidePrev");
 const SlideMainWidth = document.querySelector(".SlideMain").offsetWidth;
 const img = document.querySelectorAll(".SlideView img");
+const bannercontenleft = document.querySelector(".banner-conten-left h2");
 const quantity = img.length;
 let cnt = 0;
+function changename() {
+  if (cnt == 1) bannercontenleft.innerHTML = `<h2>One piece</h2>`;
+  else bannercontenleft.innerHTML = `<h2>Dragon Ball</h2>`;
+}
 setInterval(function TimeDots() {
   if (cnt < quantity - 1) {
     cnt++;
@@ -52,6 +57,7 @@ setInterval(function TimeDots() {
     cnt = 0;
   }
   SlideView.style = `transform: translate(${-SlideMainWidth * cnt}px);`;
+  changename();
 }, 5000);
 Next.addEventListener("click", function () {
   if (cnt < quantity - 1) {
@@ -60,6 +66,7 @@ Next.addEventListener("click", function () {
     cnt = 0;
   }
   SlideView.style = `transform: translate(${-SlideMainWidth * cnt}px);`;
+  changename();
 });
 Prev.addEventListener("click", function () {
   if (cnt <= 1) {
@@ -73,6 +80,7 @@ Prev.addEventListener("click", function () {
       -SlideMainWidth * cnt + SlideMainWidth
     }px);`;
   }
+  changename();
 });
 
 // ================================================================================================
@@ -186,7 +194,31 @@ for (let i = 0; i < productslide.length; i++) {
 // ================================================================================================
 window.addEventListener("scroll", function () {
   let value = this.window.scrollY;
-
+  let headposfix = this.document.querySelector(".headposfix");
   let header = this.document.querySelector(".head-top");
   header.classList.toggle("sticky", value > 50);
+  if (value > 50) {
+    headposfix.style = `background-color: #000;`;
+  } else {
+    headposfix.style = `background-color: transparent;`;
+  }
+});
+
+// ================================================================================================
+var gallery = document.querySelector(".gallery");
+const User = document.querySelector(".User ");
+const gallery__inner = document.querySelector(".gallery__inner");
+
+User.addEventListener("click", function (e) {
+  if (e.target == e.currentTarget) {
+    gallery.classList.toggle("showgallery");
+  }
+});
+
+//e.target: the cu the ma minh chon
+//e.currentTarget: the ma minh dang goi ham den
+gallery.addEventListener("click", function (e) {
+  if (e.target == e.currentTarget) {
+    gallery.classList.toggle("showgallery");
+  }
 });

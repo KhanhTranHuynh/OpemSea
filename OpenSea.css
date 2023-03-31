@@ -16,8 +16,6 @@ body {
 }
 .app {
   width: 1500px;
-  padding: 20px;
-  position: relative;
   /* overflow: hidden; */
 }
 
@@ -327,6 +325,7 @@ h3 {
 }
 
 .SlideMain {
+  width: 100%;
   height: 100%;
   overflow: hidden;
   border-radius: 3rem;
@@ -338,16 +337,17 @@ h3 {
 }
 
 .SlideView img {
-  width: 100%;
+  width: 1460px;
   height: 100%;
   object-fit: cover;
   object-position: center;
   transition: 0.4s;
-  transition-delay: 0.1s;
+  filter: grayscale(70%);
 }
 
 .SlideView img:hover {
   transform: scale(1.1);
+  filter: grayscale(0%);
 }
 
 .SlideShow i {
@@ -625,4 +625,19 @@ main {
 
 .product-prev {
   left: -30px;
+}
+
+/* ===footer============================================================== */
+footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: #04111d;
+  display: flex;
+  justify-content: center;
+}
+
+.footter-first {
+  background-color: red;
+  height: 500px;
 }

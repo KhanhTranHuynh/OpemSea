@@ -1,3 +1,19 @@
+let nameproduct = [
+  "Audio Galleries",
+  "Wrapped Cryptopunks",
+  "Bored Ape Yacht Club",
+  "BEANZ Official",
+  "CryptoPunks V1 (wrapped)",
+  "Women Unite",
+  "PonziLords",
+  "RR/MILADY",
+  "Cool Cats NFT",
+  "Monkey NFT",
+  "Azuki",
+];
+
+// ================================================================================================
+
 const Resources_list = document.querySelector(".Resources_list");
 Resources_list.innerHTML =
   Resourceslists() +
@@ -29,6 +45,36 @@ function Resourceslists() {
   return chuoi;
 }
 
+// ================================================================================================
+const Languagelist = document.querySelector(".Language_list");
+const listLanguage = [
+  "VietNamese",
+  "French",
+  "Chinese",
+  "Japanese",
+  "Korean",
+  "German",
+];
+for (let i = 0; i < 6; i++) {
+  Languagelist.innerHTML += `<div class="Language_element">
+  ${listLanguage[i]}
+  <div class="language-icon"></div>
+</div>`;
+}
+// ================================================================================================
+const botnav = document.querySelector(".bot-nav");
+const headbotlist = [
+  "All",
+  "Art",
+  "Gaming",
+  "Memberships",
+  "PFPs",
+  "Photography",
+];
+botnav.innerHTML += `<li class="active">${headbotlist[0]}</li>`;
+for (let i = 1; i < 6; i++) {
+  botnav.innerHTML += `<li>${headbotlist[i]}</li>`;
+}
 // ================================================================================================
 
 const producttrending = document.querySelector(".product-trending");
@@ -69,6 +115,7 @@ function producttrendinglist() {
 }
 
 function producttrendingelement(stt, bien) {
+  let num = Math.floor(Math.random() * 10);
   let chuoi = ``;
   chuoi +=
     `<div class="col p-6 mb-20">
@@ -80,11 +127,11 @@ function producttrendingelement(stt, bien) {
       <img src="./image/image` +
     bien +
     `.jpg" alt="">
-      <span>Hidden Weirdo</span>
+      <span>${nameproduct[num]}</span>
     </div>
     <div class="product-trending-price">
-      <div class="floor">0.02 ETH</div>
-      <div class="volume">9.6 ETH</div>
+      <div class="floor">0.${num + 10} ETH</div>
+      <div class="volume">${num * num + 2 * num} ETH</div>
     </div>
   </div>
 </div>`;
@@ -92,11 +139,23 @@ function producttrendingelement(stt, bien) {
 }
 
 // ================================================================================================
-
 const showproduct = document.querySelectorAll(".showproduct");
+const titleproduct = [
+  "Notable Collections",
+  "Top Collector Buys Today",
+  "Women's History Month Spotlight",
+  "Trending in Art",
+  "Trending in Gaming",
+  "Trending in Memberships",
+  "Trending in PFPs",
+  "Trending in Photography",
+  "NFT 101",
+  "Explore Categories",
+];
+let numbertitleproduct = 0;
 showproduct.forEach((item) => {
   item.innerHTML =
-    `<h3>Notable Collections</h3>
+    `<h3>${titleproduct[numbertitleproduct]}</h3>
   <div class="grid wide product-main">
     <div class="product-slide">
       <div class="row product-show">` +
@@ -105,6 +164,7 @@ showproduct.forEach((item) => {
       </div>
       <i class="fa-solid fa-angle-left product-prev"></i>
       <i class="fa-solid fa-angle-right product-next"></i>`;
+  numbertitleproduct++;
 });
 
 function productlist() {
@@ -118,6 +178,8 @@ function productlist() {
 }
 
 function productelement(bien) {
+  let num = Math.floor(Math.random() * 10);
+
   let chuoi =
     `<div class="col p-2-4 t-4 m-6">
   <div class="product-show-item">
@@ -127,21 +189,56 @@ function productelement(bien) {
     `.jpg" alt="">
     </div>
     <div class="show-item-content">
-      Audio Galleries<i
+      ${nameproduct[num]}`;
+  if (num % 2 == 0) {
+    chuoi += `<i
         class="fa-sharp fa-solid fa-circle-check"
-      ></i>
-      <div class="show-item-price">
+      ></i>`;
+  }
+  chuoi += `<div class="show-item-price">
         <div class="show-item-floor">
           <p>FLOOR</p>
-          <p>0.03 ETH</p>
+          <p>0.0${num} ETH</p>
         </div>
         <div class="show-item-volume">
           <p>TOTAL VOLUMA</p>
-          <p>41 ETH</p>
+          <p>${num * num + 2 * num} ETH</p>
         </div>
       </div>
     </div>
   </div>
 </div>`;
   return chuoi;
+}
+
+// ================================================================================================
+let Marketplacelist =
+  "Marketplace,All NFTs,Art,Gaming,Memberships,PFPs,Photography";
+let MyAccountlist =
+  "My Account,Profile,Favorites,Watchlist,My Collections,Create,Settings,";
+let Resourceslist =
+  "Resources,Blog,Learn,Help Center,User Content FAQs,Taxes,Partners,Developer Platform,Platform Status";
+let Companylist = "Company,About,Careers,Ventures,Grants";
+let Statslist = "Stats,Rankings,Activity";
+let Learnlist =
+  "Learn,What is an NFT?,How to buy an NFT,What are NFT drops?,How to sell an NFT using OpenSea,How to create an NFT on OpenSea,What is a crypto wallet?,What is cryptocurrency?,What are blockchain gas fees?,What is a blockchain?,What is web3?,How to stay protected in web3";
+
+const arrayHaiChieu = [
+  Marketplacelist.split(","),
+  MyAccountlist.split(","),
+  Resourceslist.split(","),
+  Companylist.split(","),
+  Statslist.split(","),
+  Learnlist.split(","),
+];
+
+for (let i = 0; i < arrayHaiChieu.length; i++) {
+  const mangcon = arrayHaiChieu[i];
+  for (let j = 0; j < mangcon.length; j++) {
+    let clasnamene = `.endfoot${i + 1}`;
+    if (j == 0) {
+      document.querySelector(clasnamene).innerHTML += `<h3>${mangcon[0]}</h3>`;
+    }
+    document.querySelector(clasnamene).innerHTML += `<p>${mangcon[j]}</p>`;
+  }
 }

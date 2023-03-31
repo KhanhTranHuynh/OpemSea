@@ -32,9 +32,13 @@ selecttime.forEach((item) => {
   });
 });
 
-//==============================================================
+// ================================================================================================
 //Banner slide show
 const SlideView = document.querySelector(".SlideView");
+for (let i = 1; i <= 2; i++) {
+  SlideView.innerHTML += `<img src="./image/banner${i}.jpg" alt="" />`;
+}
+
 const Next = document.querySelector(".SlideNext");
 const Prev = document.querySelector(".SlidePrev");
 const SlideMainWidth = document.querySelector(".SlideMain").offsetWidth;
@@ -71,6 +75,7 @@ Prev.addEventListener("click", function () {
   }
 });
 
+// ================================================================================================
 // Night mode
 const toggle_night = document.querySelector(".toggle_night");
 const night_box = document.querySelector(".night_box");
@@ -99,6 +104,7 @@ toggle_night.addEventListener("click", function () {
   }
 });
 
+// ================================================================================================
 //selection Laguage
 const tranlateLanguage = document.querySelector(".tranlateLanguage");
 const User_list = document.querySelector(".User_list");
@@ -125,52 +131,59 @@ for (let i = 0; i < Language_element.length; i++) {
   });
 }
 
-const productshow = document.querySelector(".product-show");
-const productslide = document.querySelector(".product-slide");
-const productnext = document.querySelector(".product-next");
-const productprev = document.querySelector(".product-prev");
-let checkproductnext = 1;
+// ================================================================================================
+const productshow = document.querySelectorAll(".product-show");
+const productslide = document.querySelectorAll(".product-slide");
+const productnext = document.querySelectorAll(".product-next");
+const productprev = document.querySelectorAll(".product-prev");
 
-productslide.addEventListener("mouseout", function () {
-  productprev.style = `opacity: 0;`;
-  productnext.style = `opacity: 0;`;
-});
+for (let i = 0; i < productslide.length; i++) {
+  let checkproductnext = 1;
+  productslide[i].addEventListener("mouseout", function () {
+    productprev[i].style = `opacity: 0;`;
+    productnext[i].style = `opacity: 0;`;
+  });
 
-productnext.addEventListener("mouseover", function () {
-  productnext.style = `opacity: 1;`;
-});
+  productnext[i].addEventListener("mouseover", function () {
+    productnext[i].style = `opacity: 1;`;
+  });
 
-productnext.addEventListener("mouseout", function () {
-  productnext.style = `opacity: 0;`;
-});
+  productnext[i].addEventListener("mouseout", function () {
+    productnext[i].style = `opacity: 0;`;
+  });
 
-productnext.addEventListener("click", function () {
-  productshow.style = `transform: translateX(${
-    -productslide.offsetWidth - 24
-  }px);`;
-  checkproductnext = 2;
-});
+  productnext[i].addEventListener("click", function () {
+    productshow[i].style = `transform: translateX(${
+      -productslide[i].offsetWidth - 24
+    }px);`;
+    productnext[i].style = "opacity: 0;";
+    checkproductnext = 2;
+  });
 
-productprev.addEventListener("mouseover", function () {
-  productprev.style = `opacity: 1;`;
-});
-productprev.addEventListener("mouseout", function () {
-  productprev.style = `opacity: 0;`;
-});
+  productprev[i].addEventListener("mouseover", function () {
+    productprev[i].style = `opacity: 1;`;
+  });
 
-productprev.addEventListener("click", function () {
-  productshow.style = `transform: translateX(0px);`;
-  checkproductnext = 1;
-});
+  productprev[i].addEventListener("mouseout", function () {
+    productprev[i].style = `opacity: 0;`;
+  });
 
-productslide.addEventListener("mouseover", function () {
-  if (checkproductnext == 1) {
-    productnext.style = `opacity: 1;`;
-  } else {
-    productprev.style = `opacity: 1;`;
-  }
-});
+  productprev[i].addEventListener("click", function () {
+    productshow[i].style = `transform: translateX(0px);`;
+    productprev[i].style = "opacity: 0;";
+    checkproductnext = 1;
+  });
 
+  productslide[i].addEventListener("mouseover", function () {
+    if (checkproductnext == 1) {
+      productnext[i].style = `opacity: 1;`;
+    } else {
+      productprev[i].style = `opacity: 1;`;
+    }
+  });
+}
+
+// ================================================================================================
 window.addEventListener("scroll", function () {
   let value = this.window.scrollY;
 

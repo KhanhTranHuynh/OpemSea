@@ -1,0 +1,171 @@
+/* main title*/
+main {
+  .main-select {
+    @include betweenElement();
+    color: $colorText;
+    margin-bottom: 50px;
+    &-left {
+      @include betweenElement();
+      width: 190px;
+      color: #828a91;
+      .select-leftactive {
+        color: $colorText;
+        position: relative;
+      }
+      .select-leftactive::before {
+        content: "";
+        width: 100%;
+        height: 3px;
+        background-color: $colorText;
+        position: absolute;
+        bottom: -10px;
+      }
+    }
+    &-right {
+      @include betweenElement();
+      width: 400px;
+      &-time {
+        width: 160px;
+        height: 40px;
+        line-height: 40px;
+        background-color: gray;
+        display: flex;
+        justify-content: space-around;
+        border-radius: 12px;
+        overflow: hidden;
+        .time-button {
+          width: 25%;
+          text-align: center;
+          background-color: #202225;
+          color: #7f878e;
+        }
+        .time-buttonactive {
+          background-color: #353840;
+          color: $colorText;
+          cursor: default;
+        }
+        .time-button:hover {
+          background-color: gray;
+          color: $colorText;
+        }
+      }
+      &-chains {
+        @include centerElement();
+        border-radius: 12px;
+        border: 1px solid black;
+        background-color: #202225;
+        padding: 0 10px;
+        transition: 0.2s;
+        cursor: pointer;
+        i {
+          margin-left: 12px;
+          font-size: 12px;
+        }
+      }
+      &-view {
+        @extend .main-select-right-chains;
+      }
+      .main-select-right-chains:hover,
+      .main-select-right-view:hover {
+        border: $colorText 1px solid;
+      }
+      .main-select-right-chains:hover i {
+        color: rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+}
+
+/* ================================================================= */
+/* main product*/
+
+.product-trending {
+  @include betweenElement();
+  color: white;
+  &-name {
+    @include centerElement();
+    img {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 12px;
+      margin: 0 20px;
+    }
+  }
+  &-price {
+    @include betweenElement();
+    width: 270px;
+  }
+}
+
+.product {
+  &-main {
+    width: 1500px;
+    position: relative;
+  }
+  &-slide {
+    overflow: hidden;
+    padding-top: 20px;
+  }
+  &-show {
+    flex-wrap: nowrap;
+    transition: 1s;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    &-item {
+      flex-shrink: 0;
+      background-color: #303339;
+      margin-bottom: 20px;
+      border-radius: 15px;
+      overflow: hidden;
+      color: white;
+      &:hover {
+        transform: translateY(-10px);
+        transition: 0.4s;
+      }
+      .img {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+      }
+      img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        &:hover {
+          transform: scale(1.1);
+          transition: 0.4s;
+        }
+      }
+      &-content {
+        padding: 10px 20px;
+        i {
+          color: #2081e2;
+          margin-left: 10px;
+          margin-top: -10px;
+        }
+      }
+      &-price {
+        @include betweenElement();
+        margin-top: 10px;
+      }
+    }
+  }
+  &-next {
+    position: absolute;
+    color: white;
+    padding: 20px 25px;
+    background-color: #33363b;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: 0.2s;
+    right: -30px;
+  }
+  &-prev {
+    @extend .product-next;
+    right: unset;
+    left: -30px;
+  }
+}

@@ -17,7 +17,7 @@ headBot_nav.forEach((item) => {
 });
 
 //SelectTranding
-const selectleft = document.querySelectorAll(".select-left h2");
+const selectleft = document.querySelectorAll(".main-select-left h2");
 selectleft.forEach((item) => {
   item.addEventListener("click", function () {
     clickactive([...selectleft], item, "select-leftactive");
@@ -25,7 +25,7 @@ selectleft.forEach((item) => {
 });
 
 //SelectTime
-const selecttime = document.querySelectorAll(".select-time div");
+const selecttime = document.querySelectorAll(".main-select-right-time div");
 selecttime.forEach((item) => {
   item.addEventListener("click", function () {
     clickactive([...selecttime], item, "time-buttonactive");
@@ -205,9 +205,9 @@ window.addEventListener("scroll", function () {
 });
 
 // ================================================================================================
-var gallery = document.querySelector(".gallery");
-const User = document.querySelector(".User ");
-const gallery__inner = document.querySelector(".gallery__inner");
+var gallery = document.querySelector(".galleryUser");
+const User = document.querySelector(".User i");
+const gallery__inner = document.querySelector(".galleryUser-inner");
 
 User.addEventListener("click", function (e) {
   if (e.target == e.currentTarget) {
@@ -220,5 +220,21 @@ User.addEventListener("click", function (e) {
 gallery.addEventListener("click", function (e) {
   if (e.target == e.currentTarget) {
     gallery.classList.toggle("showgallery");
+  }
+});
+// ================================================================================================
+const fromboxshow = document.querySelector(".galleryUser-inner-show");
+fromboxshow.addEventListener("click", function (e) {
+  if (fromboxshow.innerText == "Show less") {
+    document.querySelector(".galleryUser-inner-list").scrollTop = 0;
+    document.querySelector(
+      ".galleryUser-inner-list"
+    ).style = `overflow-Y: hidden;`;
+    fromboxshow.innerText = "Show more";
+  } else {
+    document.querySelector(
+      ".galleryUser-inner-list"
+    ).style = `overflow-Y: scroll;`;
+    fromboxshow.innerText = "Show less";
   }
 });

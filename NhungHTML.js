@@ -82,7 +82,7 @@ producttrending.innerHTML =
   `<div class="grid wide">
 <div class="row sm-gutter">
   <div class="col p-6">
-    <div class="product-trending">
+    <div class="product-trending mb-4">
       <div class="product-trending-name">COLLECTION</div>
       <div class="product-trending-price">
         <div class="floor">FLOOR PRICE</div>
@@ -91,7 +91,7 @@ producttrending.innerHTML =
     </div>
   </div>
   <div class="col p-6">
-    <div class="product-trending">
+    <div class="product-trending mb-4">
       <div class="product-trending-name">COLLECTION</div>
       <div class="product-trending-price">
         <div class="floor">FLOOR PRICE</div>
@@ -118,7 +118,7 @@ function producttrendingelement(stt, bien) {
   let num = Math.floor(Math.random() * 10);
   let chuoi = ``;
   chuoi +=
-    `<div class="col p-6 mb-20">
+    `<div class="col p-6 mb-2">
   <div class="product-trending">
     <div class="product-trending-name">
       <span>` +
@@ -188,19 +188,19 @@ function productelement(bien) {
     bien +
     `.jpg" alt="">
     </div>
-    <div class="show-item-content">
+    <div class="product-show-item-content">
       ${nameproduct[num]}`;
   if (num % 2 == 0) {
     chuoi += `<i
         class="fa-sharp fa-solid fa-circle-check"
       ></i>`;
   }
-  chuoi += `<div class="show-item-price">
-        <div class="show-item-floor">
+  chuoi += `<div class="product-show-item-price">
+        <div class="product-show-item-floor">
           <p>FLOOR</p>
           <p>0.0${num} ETH</p>
         </div>
-        <div class="show-item-volume">
+        <div class="product-show-item-volume">
           <p>TOTAL VOLUMA</p>
           <p>${num * num + 2 * num} ETH</p>
         </div>
@@ -240,4 +240,40 @@ for (let i = 0; i < arrayHaiChieu.length; i++) {
       document.querySelector(clasnamene).innerHTML += `<h4>${mangcon[0]}</h4>`;
     else document.querySelector(clasnamene).innerHTML += `<p>${mangcon[j]}</p>`;
   }
+}
+// ================================================================================================
+const imagePayList = [
+  "https://opensea.io/static/images/logos/metamask-fox.svg",
+  "https://static.opensea.io/logos/walletlink-alternative.png",
+  "https://static.opensea.io/logos/walletconnect-alternative.png",
+  "https://opensea.io/static/images/logos/ledgerconnect-alternative.png",
+  "https://opensea.io/static/images/logos/phantom.svg",
+  "https://lh3.googleusercontent.com/uBaatYG20TOMFFUCTEgwtaI9Q6l_Nqr0qKUGQPJHjKnlLDqhwQaQbAvQku4nyH8TVxZKx96RsiFduLrcw2vqqjrr=s48",
+  "https://lh3.googleusercontent.com/uSYrwIYFZ-7kwg0-P_0YKubeNhFUN_jGg9J8bPbCOYjwW94jbFCEMqHUaV35sn0bvqujkuy6M72gjIRD4NTCirsQpXc=s48",
+  "https://opensea.io/static/images/logos/glow.svg",
+  "https://static.opensea.io/logos/fortmatic-alternative.png",
+  "https://opensea.io/static/images/logos/venly.svg",
+];
+const namePayList = [
+  "MetaMask",
+  "Coinbase Wallet",
+  "Wallet connect",
+  " Ledger",
+  "Phantom",
+  "BitKeep",
+  "Core",
+  "Glow",
+  "Fortmatic",
+  "Venly",
+];
+
+const galleryUserinnerlist = document.querySelector(".galleryUser-inner-list");
+for (let i = 0; i < imagePayList.length; i++) {
+  galleryUserinnerlist.innerHTML += `<p>
+  <img
+    src="${imagePayList[i]}"
+    alt=""
+  />
+  ${namePayList[i]}
+</p>`;
 }

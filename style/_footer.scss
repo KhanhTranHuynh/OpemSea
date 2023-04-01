@@ -1,0 +1,65 @@
+footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: #04111d;
+  @include centerElement();
+  .footer {
+    &-top {
+      color: $colorText;
+      &-left {
+        &-login {
+          width: 100%;
+          display: flex;
+          input {
+            padding: 7px 10px;
+            font-size: 1.2rem;
+            border: 1px solid #858f99;
+            outline: none;
+            background-color: transparent;
+            color: $colorText;
+            border-radius: 12px;
+            flex: 1;
+            transition: 0.3s;
+          }
+          input::placeholder {
+            color: #858f99;
+          }
+          input:hover {
+            border: 1px solid #fff;
+          }
+          button {
+            padding: 14px 42px;
+            border-radius: 12px;
+            font-size: 18px;
+            color: $colorText;
+            background-color: $colorBlue;
+            font-weight: 700;
+            border: none;
+            outline: none;
+          }
+        }
+      }
+      &-right {
+        i {
+          padding: 20px;
+          background-color: #353840;
+          color: $colorText;
+          font-size: 1.4rem;
+          border-radius: 12px;
+          margin-right: 20px;
+        }
+        i:hover {
+          background-color: $colorBlue;
+        }
+      }
+    }
+    &-middle {
+      color: $colorText;
+    }
+    &-bot {
+      @include betweenElement();
+      color: $colorText;
+    }
+  }
+}

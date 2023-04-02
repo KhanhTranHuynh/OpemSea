@@ -1,4 +1,4 @@
-let nameproduct = [
+var nameproduct = [
   "Audio Galleries",
   "Wrapped Cryptopunks",
   "Bored Ape Yacht Club",
@@ -10,6 +10,113 @@ let nameproduct = [
   "Cool Cats NFT",
   "Monkey NFT",
   "Azuki",
+];
+
+var listLanguage = [
+  "VietNamese",
+  "French",
+  "Chinese",
+  "Japanese",
+  "Korean",
+  "German",
+];
+
+var listResources = [
+  "Blog",
+  "Learn",
+  "Help Center",
+  "Use content FAQs",
+  "Taxes",
+  "Partners",
+  "Developper platfrom",
+  "Platfrom Status",
+];
+
+var headbotlist = [
+  "All",
+  "Art",
+  "Gaming",
+  "Memberships",
+  "PFPs",
+  "Photography",
+];
+
+var titleproduct = [
+  "Notable Collections",
+  "Top Collector Buys Today",
+  "Women's History Month Spotlight",
+  "Trending in Art",
+  "Trending in Gaming",
+  "Trending in Memberships",
+  "Trending in PFPs",
+  "Trending in Photography",
+  "NFT 101",
+  "Explore Categories",
+];
+
+let Marketplacelist =
+  "Marketplace,All NFTs,Art,Gaming,Memberships,PFPs,Photography";
+let MyAccountlist =
+  "My Account,Profile,Favorites,Watchlist,My Collections,Create,Settings,";
+let Resourceslist =
+  "Resources,Blog,Learn,Help Center,User Content FAQs,Taxes,Partners,Developer Platform,Platform Status";
+let Companylist = "Company,About,Careers,Ventures,Grants";
+let Statslist = "Stats,Rankings,Activity";
+let Learnlist =
+  "Learn,What is an NFT?,How to buy an NFT,What are NFT drops?,How to sell an NFT using OpenSea,How to create an NFT on OpenSea,What is a crypto wallet?,What is cryptocurrency?,What are blockchain gas fees?,What is a blockchain?,What is web3?,How to stay protected in web3";
+const arrayHaiChieu = [
+  Marketplacelist.split(","),
+  MyAccountlist.split(","),
+  Resourceslist.split(","),
+  Companylist.split(","),
+  Statslist.split(","),
+  Learnlist.split(","),
+];
+
+const mapPayList = [
+  {
+    image: "https://opensea.io/static/images/logos/metamask-fox.svg",
+    name: "MetaMask",
+  },
+  {
+    image: "https://static.opensea.io/logos/walletlink-alternative.png",
+    name: "Coinbase Wallet",
+  },
+  {
+    image: "https://static.opensea.io/logos/walletconnect-alternative.png",
+    name: "Wallet connect",
+  },
+  {
+    image:
+      "https://opensea.io/static/images/logos/ledgerconnect-alternative.png",
+    name: " Ledger",
+  },
+  {
+    image: "https://opensea.io/static/images/logos/phantom.svg",
+    name: "Phantom",
+  },
+  {
+    image:
+      "https://lh3.googleusercontent.com/uBaatYG20TOMFFUCTEgwtaI9Q6l_Nqr0qKUGQPJHjKnlLDqhwQaQbAvQku4nyH8TVxZKx96RsiFduLrcw2vqqjrr=s48",
+    name: "BitKeep",
+  },
+  {
+    image:
+      "https://lh3.googleusercontent.com/uSYrwIYFZ-7kwg0-P_0YKubeNhFUN_jGg9J8bPbCOYjwW94jbFCEMqHUaV35sn0bvqujkuy6M72gjIRD4NTCirsQpXc=s48",
+    name: "Core",
+  },
+  {
+    image: "https://opensea.io/static/images/logos/glow.svg",
+    name: "Glow",
+  },
+  {
+    image: "https://static.opensea.io/logos/fortmatic-alternative.png",
+    name: "Fortmatic",
+  },
+  {
+    image: "https://opensea.io/static/images/logos/venly.svg",
+    name: "Venly",
+  },
 ];
 
 // ================================================================================================
@@ -28,33 +135,16 @@ Resources_list.innerHTML =
   </div>
   `;
 function Resourceslists() {
-  const Resourceslist = [
-    "Blog",
-    "Learn",
-    "Help Center",
-    "Use content FAQs",
-    "Taxes",
-    "Partners",
-    "Developper platfrom",
-    "Platfrom Status",
-  ];
   let chuoi = ``;
-  for (let i = 0; i < Resourceslist.length; i++) {
-    chuoi += `<div class="Resources_element">` + Resourceslist[i] + `</div>`;
+  for (let i = 0; i < listResources.length; i++) {
+    chuoi += `<div class="Resources_element">` + listResources[i] + `</div>`;
   }
   return chuoi;
 }
 
 // ================================================================================================
 const Languagelist = document.querySelector(".Language_list");
-const listLanguage = [
-  "VietNamese",
-  "French",
-  "Chinese",
-  "Japanese",
-  "Korean",
-  "German",
-];
+
 for (let i = 0; i < 6; i++) {
   Languagelist.innerHTML += `<div class="Language_element">
   ${listLanguage[i]}
@@ -63,14 +153,6 @@ for (let i = 0; i < 6; i++) {
 }
 // ================================================================================================
 const botnav = document.querySelector(".bot-nav");
-const headbotlist = [
-  "All",
-  "Art",
-  "Gaming",
-  "Memberships",
-  "PFPs",
-  "Photography",
-];
 botnav.innerHTML += `<li class="active">${headbotlist[0]}</li>`;
 for (let i = 1; i < 6; i++) {
   botnav.innerHTML += `<li>${headbotlist[i]}</li>`;
@@ -140,18 +222,6 @@ function producttrendingelement(stt, bien) {
 
 // ================================================================================================
 const showproduct = document.querySelectorAll(".showproduct");
-const titleproduct = [
-  "Notable Collections",
-  "Top Collector Buys Today",
-  "Women's History Month Spotlight",
-  "Trending in Art",
-  "Trending in Gaming",
-  "Trending in Memberships",
-  "Trending in PFPs",
-  "Trending in Photography",
-  "NFT 101",
-  "Explore Categories",
-];
 let numbertitleproduct = 0;
 showproduct.forEach((item) => {
   item.innerHTML =
@@ -212,25 +282,6 @@ function productelement(bien) {
 }
 
 // ================================================================================================
-let Marketplacelist =
-  "Marketplace,All NFTs,Art,Gaming,Memberships,PFPs,Photography";
-let MyAccountlist =
-  "My Account,Profile,Favorites,Watchlist,My Collections,Create,Settings,";
-let Resourceslist =
-  "Resources,Blog,Learn,Help Center,User Content FAQs,Taxes,Partners,Developer Platform,Platform Status";
-let Companylist = "Company,About,Careers,Ventures,Grants";
-let Statslist = "Stats,Rankings,Activity";
-let Learnlist =
-  "Learn,What is an NFT?,How to buy an NFT,What are NFT drops?,How to sell an NFT using OpenSea,How to create an NFT on OpenSea,What is a crypto wallet?,What is cryptocurrency?,What are blockchain gas fees?,What is a blockchain?,What is web3?,How to stay protected in web3";
-
-const arrayHaiChieu = [
-  Marketplacelist.split(","),
-  MyAccountlist.split(","),
-  Resourceslist.split(","),
-  Companylist.split(","),
-  Statslist.split(","),
-  Learnlist.split(","),
-];
 
 for (let i = 0; i < arrayHaiChieu.length; i++) {
   const mangcon = arrayHaiChieu[i];
@@ -242,38 +293,14 @@ for (let i = 0; i < arrayHaiChieu.length; i++) {
   }
 }
 // ================================================================================================
-const imagePayList = [
-  "https://opensea.io/static/images/logos/metamask-fox.svg",
-  "https://static.opensea.io/logos/walletlink-alternative.png",
-  "https://static.opensea.io/logos/walletconnect-alternative.png",
-  "https://opensea.io/static/images/logos/ledgerconnect-alternative.png",
-  "https://opensea.io/static/images/logos/phantom.svg",
-  "https://lh3.googleusercontent.com/uBaatYG20TOMFFUCTEgwtaI9Q6l_Nqr0qKUGQPJHjKnlLDqhwQaQbAvQku4nyH8TVxZKx96RsiFduLrcw2vqqjrr=s48",
-  "https://lh3.googleusercontent.com/uSYrwIYFZ-7kwg0-P_0YKubeNhFUN_jGg9J8bPbCOYjwW94jbFCEMqHUaV35sn0bvqujkuy6M72gjIRD4NTCirsQpXc=s48",
-  "https://opensea.io/static/images/logos/glow.svg",
-  "https://static.opensea.io/logos/fortmatic-alternative.png",
-  "https://opensea.io/static/images/logos/venly.svg",
-];
-const namePayList = [
-  "MetaMask",
-  "Coinbase Wallet",
-  "Wallet connect",
-  " Ledger",
-  "Phantom",
-  "BitKeep",
-  "Core",
-  "Glow",
-  "Fortmatic",
-  "Venly",
-];
 
 const galleryUserinnerlist = document.querySelector(".galleryUser-inner-list");
-for (let i = 0; i < imagePayList.length; i++) {
+for (let i = 0; i < mapPayList.length; i++) {
   galleryUserinnerlist.innerHTML += `<p>
   <img
-    src="${imagePayList[i]}"
+    src="${mapPayList[i].image}"
     alt=""
   />
-  ${namePayList[i]}
+  ${mapPayList[i].name}
 </p>`;
 }

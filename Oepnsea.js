@@ -1,7 +1,6 @@
 const body = document.querySelector("body");
 
 function clickactive(arraylist, item, classactive) {
-  console.log(item);
   arraylist.forEach((test) => {
     test.classList.remove(classactive);
   });
@@ -206,7 +205,7 @@ window.addEventListener("scroll", function () {
 
 // ================================================================================================
 var gallery = document.querySelector(".galleryUser");
-const User = document.querySelector(".User i");
+const User = document.querySelector(".Language");
 const gallery__inner = document.querySelector(".galleryUser-inner");
 
 User.addEventListener("click", function (e) {

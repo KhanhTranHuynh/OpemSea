@@ -37,7 +37,22 @@
   box-shadow: 20px 20px 60px #000, -20px -20px 60px #000;
   border-radius: 12px;
   cursor: text;
+  position: relative;
+  &-history {
+    position: absolute;
+    bottom: 0;
+    top: (120%);
+    left: 0;
+    right: 0;
+    background-color: #303339;
+    border-radius: 12px;
+    span {
+      width: 100%;
+      line-height: 30px;
+    }
+  }
 }
+
 .search:hover {
   background: #222222;
 }
@@ -58,6 +73,7 @@
 .search input::placeholder {
   color: #fff;
 }
+
 .top-nav-right {
   font-size: 1rem;
   font-weight: 700;

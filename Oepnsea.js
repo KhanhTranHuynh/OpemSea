@@ -1,5 +1,16 @@
 const body = document.querySelector("body");
 
+function clickactivenew(arraylist, classnameactive) {
+  arraylist.forEach((item) => {
+    item.addEventListener("click", function () {
+      arraylist.forEach((test) => {
+        test.classList.remove(classnameactive);
+      });
+      item.classList.add(classnameactive);
+    });
+  });
+}
+
 function clickactive(arraylist, item, classactive) {
   arraylist.forEach((test) => {
     test.classList.remove(classactive);
@@ -9,27 +20,15 @@ function clickactive(arraylist, item, classactive) {
 
 //Header Nav page
 const headBot_nav = document.querySelectorAll(".head-bot .bot-nav li");
-headBot_nav.forEach((item) => {
-  item.addEventListener("click", function () {
-    clickactive([...headBot_nav], item, "active");
-  });
-});
+clickactivenew(headBot_nav, "active");
 
 //SelectTranding
 const selectleft = document.querySelectorAll(".main-select-left h2");
-selectleft.forEach((item) => {
-  item.addEventListener("click", function () {
-    clickactive([...selectleft], item, "select-leftactive");
-  });
-});
+clickactivenew(selectleft, "select-leftactive");
 
 //SelectTime
 const selecttime = document.querySelectorAll(".main-select-right-time div");
-selecttime.forEach((item) => {
-  item.addEventListener("click", function () {
-    clickactive([...selecttime], item, "time-buttonactive");
-  });
-});
+clickactivenew(selecttime, "time-buttonactive");
 
 // ================================================================================================
 //Banner slide show
@@ -237,3 +236,52 @@ fromboxshow.addEventListener("click", function (e) {
     fromboxshow.innerText = "Show less";
   }
 });
+
+// ================================================================================================
+const search = document.querySelector('input[name="search"');
+const close = document.querySelector(".close");
+const searchhistory = document.querySelector(".search-history");
+
+search.addEventListener("input", function () {
+  console.log(search.value);
+  searchhistory.innerHTML = "";
+  if (search.value != "") {
+    close.style.display = "block";
+    let cntheight = 10;
+
+    for (let i = 0; i < nameproduct.length; i++) {
+      if (nameproduct[i].toLowerCase().search(search.value) != -1) {
+        searchhistory.style.display = "block";
+        searchhistory.innerHTML += `<span>${nameproduct[i]}</span> <br>`;
+        searchhistory.style.height = `${(cntheight += 30)}px`;
+        searchhistory.style.background = "red";
+        var searchhistoryElement = document.querySelectorAll(
+          ".search-history span"
+        );
+        searchhistoryElement.forEach((item) => {
+          item.addEventListener("click", function () {
+            search.value = item.textContent;
+            searchhistory.style.display = "none";
+          });
+        });
+      }
+    }
+    body.addEventListener("keydown", function (e) {
+      if (e.keyCode == 13) {
+        search.value = "";
+        close.style.display = "none";
+        searchhistory.innerHTML = "";
+      }
+    });
+  } else {
+    close.style.display = "none";
+    searchhistory.style.display = "none";
+  }
+});
+
+close.addEventListener("click", function () {
+  search.value = "";
+  close.style.display = "none";
+});
+
+// ================================================================================================
